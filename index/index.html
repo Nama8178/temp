@@ -14,21 +14,22 @@
 
     </div>
 
-    <input id="latt" type="text" style="width: 447px;" />
-    <input id="long" type="text" style="width: 447px;" />
+    <input id="latt" type="text" style="width: 447px;" placeholder="Lattitude"/>
+    <input id="long" type="text" style="width: 447px;" placeholder="Longitude"/>
     <button onclick="FindLocation()">Enter</button>
     <script language="javascript" type="text/javascript">
         var map;
         var geocoder;
         var latt = "66";
-        console.log(latt)
         var long = "15"
         function FindLocation() {
            latt = document.getElementById("latt").value;
-           console.log(latt);
            long = document.getElementById("long").value;
+           InitializeMap();
         }
         function InitializeMap() {
+            console.log(long)
+            console.log(latt)
             var latlng = new google.maps.LatLng(`${latt}`, `${long}`); // Example coordinates
             var myOptions = {
                 zoom: 8,
